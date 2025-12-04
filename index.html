@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Jonathan Zadra, PhD – Data Science & Engineering</title>
+  <title>Jonathan Zadra, PhD – Data Science &amp; Engineering</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
@@ -50,6 +50,12 @@
       justify-content: center;
     }
 
+    @media (max-width: 600px) {
+      body {
+        padding: 16px;
+      }
+    }
+
     .shell {
       width: 100%;
       max-width: 1120px;
@@ -71,7 +77,6 @@
       }
     }
 
-    /* Subtle glow ring */
     .shell::before {
       content: "";
       position: absolute;
@@ -87,6 +92,8 @@
       flex-direction: column;
       gap: 20px;
       margin-bottom: 32px;
+      position: relative;
+      z-index: 1;
     }
 
     @media (min-width: 900px) {
@@ -124,6 +131,7 @@
       letter-spacing: 0.16em;
       border: 1px solid rgba(148, 163, 184, 0.5);
       color: var(--muted);
+      white-space: nowrap;
     }
 
     .headline {
@@ -195,6 +203,15 @@
       background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.16), transparent 60%),
                   rgba(15, 23, 42, 0.9);
       padding: 8px 10px;
+      position: sticky;
+      top: 8px;
+      z-index: 1;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        position: static;
+      }
     }
 
     nav a {
@@ -227,6 +244,8 @@
       display: grid;
       grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.4fr);
       gap: 24px;
+      position: relative;
+      z-index: 1;
     }
 
     @media (max-width: 900px) {
@@ -257,6 +276,8 @@
       justify-content: space-between;
       align-items: baseline;
       margin-bottom: 6px;
+      gap: 8px;
+      flex-wrap: wrap;
     }
 
     .section-title {
@@ -282,6 +303,7 @@
       border: 1px solid rgba(148, 163, 184, 0.6);
       color: var(--muted);
       background: rgba(15, 23, 42, 0.85);
+      white-space: nowrap;
     }
 
     .pill-dot {
@@ -491,14 +513,15 @@
     }
 
     .strength-pill {
-      font-size: 0.8rem;
-      padding: 6px 9px;
+      font-size: 0.78rem;
+      padding: 6px 10px;
       border-radius: 999px;
       background: var(--chip);
       border: 1px solid var(--chip-border);
       color: #ccfbf1;
       text-align: center;
-      white-space: nowrap;
+      white-space: normal;    /* allows wrapping */
+      line-height: 1.3;
     }
 
     footer {
@@ -509,6 +532,8 @@
       justify-content: space-between;
       gap: 10px;
       flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
     }
 
     footer span {
@@ -522,7 +547,7 @@
       <div class="identity">
         <div class="name">
           Jonathan Zadra, PhD
-          <span>Data Science & Engineering</span>
+          <span>Data Science &amp; Engineering</span>
         </div>
         <div class="headline">
           Senior Data Scientist · Data Engineer · Quantitative Research Leader
@@ -551,11 +576,10 @@
           </a>
         </div>
         <div class="chip-row">
-          <div class="chip">R</div>
-          <div class="chip">R Package Development</div>
-          <div class="chip">Causal Inference</div>
-          <div class="chip">Experimental Design</div>
-          <div class="chip">Impact Evaluation</div>
+          <div class="chip">R (15+ yrs)</div>
+          <div class="chip">R package development</div>
+          <div class="chip">Causal inference</div>
+          <div class="chip">Impact evaluation</div>
         </div>
       </div>
     </header>
@@ -578,7 +602,7 @@
               <h2 class="section-title">Experience</h2>
               <div class="pill">
                 <span class="pill-dot"></span>
-                Currently Open to Roles
+                Currently open to roles
               </div>
             </div>
 
@@ -654,8 +678,10 @@
                   monitoring data, built for internal and client-facing use.
                 </p>
                 <div class="work-links">
-                  <!-- Replace # with actual URL to your demo or slides -->
-                  <a href="#" target="_blank" rel="noopener">View Dashboard / Recording</a>
+                  <a href="/mnt/data/Jonathan Zadra work examples.gslides"
+                     target="_blank" rel="noopener">
+                    View dashboard / recording
+                  </a>
                 </div>
               </article>
 
@@ -668,8 +694,14 @@
                   identify high utilizers, and inform policy decisions statewide.
                 </p>
                 <div class="work-links">
-                  <a href="#" target="_blank" rel="noopener">Project Overview / Slides</a>
-                  <a href="#" target="_blank" rel="noopener">Representative Visualizations</a>
+                  <a href="/mnt/data/Jonathan Zadra work examples.gslides"
+                     target="_blank" rel="noopener">
+                    Project overview / slides
+                  </a>
+                  <a href="/mnt/data/Jonathan Zadra work examples.gslides"
+                     target="_blank" rel="noopener">
+                    Representative visualizations
+                  </a>
                 </div>
               </article>
 
@@ -682,7 +714,10 @@
                   client-ready Excel tables and visualizations, saving hundreds of hours per year.
                 </p>
                 <div class="work-links">
-                  <a href="#" target="_blank" rel="noopener">Package Documentation</a>
+                  <a href="/mnt/data/Jonathan Zadra work examples.gslides"
+                     target="_blank" rel="noopener">
+                    Package documentation
+                  </a>
                 </div>
               </article>
 
@@ -695,15 +730,17 @@
                   bridging rigorous quantitative methods with practitioner needs.
                 </p>
                 <div class="work-links">
-                  <a href="#" target="_blank" rel="noopener">Read Article / PDF</a>
+                  <a href="/mnt/data/Jonathan Zadra work examples.gslides"
+                     target="_blank" rel="noopener">
+                    Read article / PDF
+                  </a>
                 </div>
               </article>
             </div>
 
             <p class="muted-note">
-              <!-- This text is just for you as a reminder; edit or remove -->
-              Replace each <strong>View…</strong> link above with URLs to your actual dashboards,
-              code repos, slide decks, or Google Docs work examples.
+              Replace these links with URLs to your public dashboards, repos, or documents
+              when you’re ready to share them more widely.
             </p>
           </div>
         </section>
@@ -786,7 +823,6 @@
               <li>
                 Hadley, D., <strong>Zadra, J. R.</strong>, et al. (2018).
                 <em>A Playbook for Designing Social Impact Measurement</em>. Stanford Social Innovation Review.
-                <!-- Add URL if you want: <a href="#">link</a> -->
               </li>
               <li>
                 <strong>Zadra, J. R.</strong>, Weltman, A. L., &amp; Proffitt, D. R. (2016).
@@ -843,9 +879,16 @@
             <ul class="simple-list" style="margin-top:6px;">
               <li>Email: <a href="mailto:jzadra@gmail.com">jzadra@gmail.com</a></li>
               <li>Phone: <a href="tel:14342279416">+1 (434) 227-9416</a></li>
-              <li>LinkedIn: <a href="https://www.linkedin.com/in/jonathan-zadra" target="_blank" rel="noopener">
-                linkedin.com/in/jonathan-zadra
-              </a></li>
+              <li>LinkedIn:
+                <a href="https://www.linkedin.com/in/jonathan-zadra" target="_blank" rel="noopener">
+                  linkedin.com/in/jonathan-zadra
+                </a>
+              </li>
+              <li>GitHub:
+                <a href="https://github.com/jzadra" target="_blank" rel="noopener">
+                  github.com/jzadra
+                </a>
+              </li>
             </ul>
           </div>
         </section>
@@ -854,12 +897,11 @@
 
     <footer>
       <span>© <span id="year"></span> Jonathan Zadra · Data Science &amp; Engineering</span>
-      <span>Site generated from resume &amp; selected work examples.</span>
+      <span>Site generated from CV &amp; selected work examples.</span>
     </footer>
   </div>
 
   <script>
-    // Set current year in footer
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
