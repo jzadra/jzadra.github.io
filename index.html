@@ -475,6 +475,104 @@
     .footer-line span {
       font-family: var(--mono);
     }
+
+    /* Let long links wrap on narrow screens instead of forcing horizontal scroll */
+    .contact-row-inline a,
+    .section-body a {
+      word-break: break-word;  
+    }
+
+    /* Slightly adjust layout on small laptops / tablets */
+@media (max-width: 900px) {
+  body {
+    padding: 12px;
+  }
+
+  .page {
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 18px;
+    /* keep your existing borders & shadow, just make it more "card" like */
+  }
+}
+
+/* Phone & small tablet portrait tweaks */
+@media (max-width: 640px) {
+  /* Let the page stretch edge-to-edge but keep things airy inside */
+  body {
+    padding: 0;
+  }
+
+  .page {
+    max-width: 100%;
+    margin: 0;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    box-shadow: none;
+  }
+
+  .profile-column {
+    padding: 20px 16px 22px;
+    gap: 22px;
+  }
+
+  .content-column {
+    padding: 20px 16px 26px;
+    gap: 24px;
+  }
+
+  .name-line {
+    font-size: 1.4rem;
+    letter-spacing: 0.06em;
+  }
+
+  .tagline {
+    font-size: 0.88rem;
+  }
+
+  /* Center and soften the top nav for mobile */
+  .top-nav {
+    justify-content: center;
+    text-align: center;
+    gap: 4px 10px;
+  }
+
+  /* Section labels less rigid on narrow screens */
+  .section-label-column {
+    max-width: none;
+    min-width: 0;
+    margin-bottom: 4px;
+  }
+
+  .section-label-column span {
+    border-bottom-width: 1px;
+  }
+
+  /* Tighten role entries slightly */
+  .role-entry {
+    gap: 4px 10px;
+  }
+
+  .role-meta {
+    font-size: 0.78rem;
+  }
+
+  .card-plain {
+    padding: 9px 10px 10px;
+  }
+
+  /* Make strength pills full width for clean stacking */
+  .pill-soft {
+    width: 100%;
+  }
+
+  /* Footer stacks instead of stretching edge to edge */
+  .footer-line {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
   </style>
 </head>
 <body>
